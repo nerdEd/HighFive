@@ -1,10 +1,16 @@
-require 'flickr_client'
-require 'pp'
-
 namespace :highfive do
   
   desc 'Update all photos and their associated records'
   task :update_photos => :environment do         
+    
+    if( Rails.env.production? )
+      ENV['GEM_HOME'] = '/home/nerded/.gems'
+      ENV['GEM_PATH'] = '$GEM_HOME:/usr/lib/ruby/gems/1.8'  
+      require 'rubygems'
+      Gem.clear_paths      
+    end
+    
+    require 'flickr_client'
     
     flickr_client = FlickrClient::Client.new( APP_CONFIG[ 'flickr_key' ] )
     photos = flickr_client.photos( APP_CONFIG[ 'target_tag' ] )
