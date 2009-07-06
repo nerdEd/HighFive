@@ -1,8 +1,7 @@
 require 'rubygems'
-require 'httparty'
+require 'vendor/gems/httparty-0.4.3/lib/httparty.rb'
 require 'open-uri'
 require 'rexml/document'
-require 'pp'
 
 module FlickrClient
   
