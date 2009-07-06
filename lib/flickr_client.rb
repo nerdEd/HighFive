@@ -47,6 +47,7 @@ module FlickrClient
       
     end
     
+    # Currently doing this manually because of a bug in the way HTTParty parses element attributes
     def comments( photo )
       
       open( 'http://www.flickr.com/services/rest/?method=flickr.photos.comments.getList&api_key=' + @api_key +'&photo_id=' + photo.flickr_id ) do | f |
