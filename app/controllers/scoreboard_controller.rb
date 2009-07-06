@@ -5,6 +5,12 @@ class ScoreboardController < ApplicationController
     @contestants.sort! { |a,b| -a.score <=> -b.score }
   end
   
+  def show_about
+  end
+  
+  def close_about
+  end
+  
   def show_contestants_pictures
     @current_contestant_id = params[ 'flickr_id' ]
   end

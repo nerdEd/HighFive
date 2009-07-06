@@ -8,11 +8,26 @@
     <div id="scoreboard">
       <h1>high five 2009 leader board</h1>
 			<ol id="menu">
-				<li>About</li>
+				<li>
+					<%= link_to_remote "About", :url => { :action => 'show_about' }, :html => { :id => 'show_about' } %>
+					<%= link_to_remote "Close", :url => { :action => 'hide_about' }, :html => { :id => 'hide_about', :style => 'display: none;' } %>
+				</li>
 				<li><a href="http://www.maximumfun.org/shows/jordan-jesse-go">JJGo!</a></li>
 			</ol>
 			<div style="clear: both;"/>
-      <ol>
+			<div id="about_content" style="display: none;">
+				<p>
+					This is a simple scoreboard for the 2009 Jordan Jesse Go! high five contest. Right now it only tracks the total number of high five photos each contestant has posted, not a real score that would take into consideration things like high fives with celebrities. To view each contestants submissions click their username. So as to not unnecessarily stress my server the data is updated ever 15 minutes. After putting a photo up on Flickr there will be some lag until flickr updates their API search results, and this website updates until the score will be modified.
+				</p>
+				
+				<p>
+					This application is open source, the source code can be found <a href="http://github.com/nerdEd/HighFive/tree/master">here</a>. If you find any bugs or have feature request, please report them <a href="http://github.com/nerdEd/HighFive/issues">here</a>.
+				<p>
+				<p>
+					This site was developed by and is currently maintained by Ed Schmalzle. Check out my site at <a href="http://www.EdSchmalzle.com">EdSchmalzle.com</a>
+				</p>
+			</div>
+      <ol id="contestant_list">
         <% @contestants.each do | contestant | %>
           <li id="contestant_row_<%= contestant.flickr_id %>" class="contestant">
             <span>

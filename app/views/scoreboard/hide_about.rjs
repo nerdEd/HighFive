@@ -1,0 +1,8 @@
+page[ :show_about ].toggle
+page[ :hide_about ].toggle
+
+page << "function showAbout() {"
+page.visual_effect :appear, 'contestant_list', :duration => 0.2
+page << "}"
+
+page.visual_effect :fade, 'about_content', :duration => 0.2, :afterFinish => 'showAbout'
