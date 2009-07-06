@@ -1,0 +1,3 @@
+page.insert_html :after, 'contestant_row_' + @current_contestant_id, :partial => 'contestant_pictures', :locals => { :flickr_id => @current_contestant_id }
+page[ 'show_picture_link_' + @current_contestant_id ].toggle
+page[ 'hide_picture_link_' + @current_contestant_id ].toggle

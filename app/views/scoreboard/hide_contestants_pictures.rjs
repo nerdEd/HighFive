@@ -1,0 +1,3 @@
+page[ 'contestant_picture_row' + @current_contestant_id ].remove
+page[ 'show_picture_link_' + @current_contestant_id ].toggle
+page[ 'hide_picture_link_' + @current_contestant_id ].toggle

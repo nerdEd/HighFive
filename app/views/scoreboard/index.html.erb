@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="stylesheets/master.css" type="text/css" media="screen" charset="utf-8"/>
+		<%= javascript_include_tag :defaults %>   
+    <title>High Five '09!</title>
+  </head>
+  <body>		
+		<ol id="menu">
+			<li>About</li>
+			<li><a href="http://www.maximumfun.org/shows/jordan-jesse-go">JJGo!</a></li>
+		</ol>
+    <div id="scoreboard">
+      <h1>high five 2009 leader board</h1>
+      <ol>
+        <% @contestants.each do | contestant | %>
+          <li id="contestant_row_<%= contestant.flickr_id %>" class="contestant">
+            <span>
+							<%= link_to_remote contestant.username, :url => { :action => 'show_contestants_pictures', :flickr_id => contestant.flickr_id }, :html => { :id => 'show_picture_link_' + contestant.flickr_id, :style => 'text-decoration: none;' } %>
+							<%= link_to_remote "Hide Entries", :url => { :action => 'hide_contestants_pictures', :flickr_id => contestant.flickr_id }, :html => { :id => 'hide_picture_link_' + contestant.flickr_id, :style => 'display: none;' } %>
+						</span>
+						
+            <span><%= contestant.score %></span>
+          </li>
+        <% end %>
+      </ol>
+    </div>
+  </body>
+</html>

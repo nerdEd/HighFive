@@ -1,0 +1,69 @@
+body{	
+	font-family:Verdana,sans-serif;
+	background-color: #F2F0DB;
+	
+}
+
+#menu {
+	position: fixed;
+	top: 11%;
+}
+
+#menu li {
+	display: block;
+	margin: 5px 0;
+	padding: 10px;
+	height: 30px;
+	width: 100px;
+	background-color: #00A2B3;
+	color: #CEEBF2;
+	text-align: center;
+}
+
+#menu a {
+	text-decoration: none;
+	color: #CEEBF2;
+}
+
+#scoreboard {
+	margin: 0 auto;
+	width: 700px;
+	text-align: center;
+}
+
+#scoreboard h1{
+	text-transform: uppercase;
+}
+
+li.contestant {
+	display: block;
+	margin: 5px 0;
+	padding: 10px;
+	height: 50px;
+	width: 600px;
+	background-color: #00A2B3;
+}
+
+li.contestant_pictures {
+	display: block;
+	width: 630px;
+}
+
+li.contestant {
+	font-size: 2em;
+}
+
+li.contestant span {
+	float: right;
+	color: #F9F3A2;
+	text-transform: uppercase;
+}
+
+li.contestant span a {
+	color: #CEEBF2;
+	text-decoration: none;
+}
+
+li.contestant span:first-child {
+	float: left;
+}
