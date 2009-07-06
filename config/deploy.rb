@@ -22,10 +22,10 @@ role :db, domain, :primary => true
 
 namespace :deploy do
   
-  task :before_symlink do
+  task :after_symlink do
     run "cp /home/nerded/highfive.edschmalzle.com/shared/config.yml #{current_path}/config/config.yml"
     run "cd #{current_path}"
-    run "rake highfive:score RAILS_ENV=production"
+    # run "rake highfive:score RAILS_ENV=production"
   end
   
   task :restart do
