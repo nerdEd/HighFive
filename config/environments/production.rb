@@ -1,8 +1,3 @@
-ENV['GEM_HOME'] = '/home/nerded/.gems'
-ENV['GEM_PATH'] = '$GEM_HOME:/usr/lib/ruby/gems/1.8'  
-require 'rubygems'
-Gem.clear_paths
-
 # Settings specified here will take precedence over those in config/environment.rb
 
 # The production environment is meant for finished, "live" apps.
