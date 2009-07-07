@@ -16,16 +16,20 @@
 			</ol>
 			<div style="clear: both;"/>
 			<div id="about_content" style="display: none;">
-				<p>
-					This is a simple scoreboard for the 2009 Jordan Jesse Go! high five contest. Right now it only tracks the total number of high five photos each contestant has posted, not a real score that would take into consideration things like high fives with celebrities. To view each contestants submissions click their username. So as to not unnecessarily stress my server the data is updated ever 15 minutes. After putting a photo up on Flickr there will be some lag until flickr updates their API search results, and this website updates until the score will be modified.
-				</p>
-				
-				<p>
-					This application is open source, the source code can be found <a href="http://github.com/nerdEd/HighFive/tree/master">here</a>. If you find any bugs or have feature request, please report them <a href="http://github.com/nerdEd/HighFive/issues">here</a>.
-				<p>
-				<p>
-					This site was developed by and is currently maintained by Ed Schmalzle. Check out my site at <a href="http://www.EdSchmalzle.com">EdSchmalzle.com</a>
-				</p>
+				<h4>What?</h4>
+				<p>This is a simple scoreboard for the 2009 Jordan, Jesse, Go! high five contest. If you don't know what that is then you should start listening to Jordan, Jesse, Go! right now.</p>
+
+				<h4>How?</h4>
+				<p>The scoreboard searches flickr for all photos tagged with 'highfive09' and sorts them out by user. Initially all photos contribute one point to the users total score; however, if Jesse comments on the photo with [-1],  [+1], or [+2] the score for that photo will be updated accordingly. Scores are recalculated automatically every 15 minutes, but you may notice varying lag times between when you post a new entry and when your score is updated due to a lag in the flickr API results.</p>
+
+				<h4>Why?</h4>
+				<p>For maximum fun.</p>
+
+				<h4>Who?</h4>
+				<p>Me, Ed Schmalzle. Check out my website <a href="http://www.EdSchmalzle.com">here</a></p>
+
+				<h4>And...</h4>
+				<p>If you find any bugs or have feature requests, please report them <a href="http://github.com/nerdEd/HighFive/issues">here</a>. Or if you would like to contribute to the project you can get the code <a href="http://github.com/nerdEd/HighFive/tree/master">here</a>.</p>
 			</div>
       <ol id="contestant_list">
         <% @contestants.each do | contestant | %>
