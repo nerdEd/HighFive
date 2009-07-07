@@ -5,6 +5,10 @@ namespace :highfive do
     
     require 'flickr_client'
     
+    Photo.destroy_all
+    User.destroy_all
+    Comment.destroy_all
+    
     flickr_client = FlickrClient::Client.new( APP_CONFIG[ 'flickr_key' ] )
     photos = flickr_client.photos( APP_CONFIG[ 'target_tag' ] )
     
