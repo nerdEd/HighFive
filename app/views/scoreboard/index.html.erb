@@ -35,8 +35,8 @@
         <% @contestants.each do | contestant | %>
           <li id="contestant_row_<%= contestant.flickr_id %>" class="contestant">
             <span>
-							<%= link_to_remote contestant.username, :url => { :action => 'show_contestants_pictures', :flickr_id => contestant.flickr_id }, :html => { :id => 'show_picture_link_' + contestant.flickr_id, :style => 'text-decoration: none;' } %>
-							<%= link_to_remote "Hide Entries", :url => { :action => 'hide_contestants_pictures', :flickr_id => contestant.flickr_id }, :html => { :id => 'hide_picture_link_' + contestant.flickr_id, :style => 'display: none;' } %>
+							<%= link_to_remote contestant.username + ' + ', :url => { :action => 'show_contestants_pictures', :flickr_id => contestant.flickr_id }, :html => { :id => 'show_picture_link_' + contestant.flickr_id, :style => 'text-decoration: none;' } %>
+							<%= link_to_remote contestant.username + ' - ', :url => { :action => 'hide_contestants_pictures', :flickr_id => contestant.flickr_id }, :html => { :id => 'hide_picture_link_' + contestant.flickr_id, :style => 'display: none;' } %>
 						</span>
 					
             <span><%= contestant.score %></span>
