@@ -1,3 +1,4 @@
 flickr_key: 'your flickr api key'
 target_tag: 'tag_for_contest'
 admin: 'the flickr username of your moderator'
+google_analytics_key: 'your google tracking code'
