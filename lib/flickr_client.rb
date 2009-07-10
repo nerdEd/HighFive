@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'vendor/gems/httparty-0.4.3/lib/httparty.rb'
+require 'httparty'
 require 'open-uri'
 require 'rexml/document'
 
