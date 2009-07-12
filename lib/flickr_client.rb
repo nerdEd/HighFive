@@ -26,12 +26,18 @@ module FlickrClient
     
     def photos( tags = "" )
       
-      get( :query => { :method => "flickr.photos.search", :tags => tags } )[ 'rsp' ][ 'photos' ][ 'photo' ].each do | photo_properties |
-        if( !Photo.exists?( :flickr_id => photo_properties[ 'id' ] ) )
-          Photo.create( :flickr_id => photo_properties[ 'id' ], :title => photo_properties[ 'title' ], :user_id => photo_properties[ 'owner' ] )
+      response = get( :query => { :method => "flickr.photos.search", :tags => tags } )
+      pages = response[ 'rsp' ][ 'photos' ][ 'pages' ].to_i
+      for page in 1..pages
+        if( page != 1 )
+          response = get( :query => { :method => "flickr.photos.search", :tags => tags, :page => page } )
+        end
+        response[ 'rsp' ][ 'photos' ][ 'photo' ].each do | photo_properties |
+          if( !Photo.exists?( :flickr_id => photo_properties[ 'id' ] ) )
+            Photo.create( :flickr_id => photo_properties[ 'id' ], :title => photo_properties[ 'title' ], :user_id => photo_properties[ 'owner' ] )
+          end
         end
       end
-      
       Photo.find( :all )
     end
     
